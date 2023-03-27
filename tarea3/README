@@ -1,0 +1,108 @@
+              Esta es la Etapa 2 de la tarea de CC52B
+ 		     ----------------------------------------	
+
+                            El Juego del BLOCK OUT
+                          ------------------------
+                      
+                      
+                      
+
+* Primero que nada :  Para poder ejecutar el juego debe setearse 
+--------------------  la variable VDEVICE . Agregar al .tcshrc:
+                         
+                           setenv VDEVICE X11.
+
+* Segundo :  Si el monitor es blanco y negro no tiene ninguna gracia                         
+-----------  jugar.
+
+* Tercero :  Ejecutar el juego desde la estacion, no desde anakena :
+-----------                                   
+             [estacion:~/]% ~jlflores/cc52b/tarea3/tarea3
+
+
+* Cuarto :  Ya que el juego usa varios colores hay problemas si ademas
+----------  de ejecutar el blockout se estan ejecutando procesos como
+            netscape o xv
+            --------   --
+
+
+* Como se Juega : 
+-----------------
+
+    * Para Trasladar la Figura :
+     ---------------------------
+      Se usan las siguientes teclas.
+      
+      I : traslada la figura hacia ARRIBA
+      J : traslada la figura a la  IZQUIERDA
+      K : traslada la figura hacia ABAJO
+      L : traslada la figura a la DERECHA
+      Barra Espacio : tira la figura rapido hacia el fondo.
+                    
+ Dependiendo del nivel (o "pantalla") del juego, la figura se va
+ trasladando hacia el fondo en 1 udd. cada cierto delta_t de tiempo 
+ (predefinido arbitrariamente).
+ 
+      M : tambien existe la posibilidad de hacer trampa usando 
+          la tecla M, para que la figura retroceda en 1 udd.
+          
+   * Para Rotar la Figura :
+    -----------------------
+    Las figuras pueden rotarse en torno a los tres ejes (x,y,z) 
+    en angulos de 90 y -90 grados.
+    Las figuras estan compuestas por varios cubos (la figura basica).
+    De esta forma, cuando una figura rota, siempre lo hara con respecto
+    a algun cubo, que se define previamente en forma arbitraria.
+    Asi, si la figura al intentar rotar se sale del paralelepipedo o
+    caja de dimension 3x3x10,entonces la rotacion no se efectua.
+    
+    Las teclas para las rotaciones son, segun la regla de la mano derecha:
+    
+      A : el pulgar apunta a tu derecha
+      S : el pulgar apunta hacia abajo
+      D : el pulgar apunta hacia fuera de la pantalla
+      Q : inverso de A
+      W : inverso de S
+      E : inverso de D
+      
+   * Otros Botones :
+    ----------------  
+      P : Pausa. El juego queda detenido en un loop hasta que se presiona
+                 cualquiera de las teclas validas en el juego.
+                 
+      N : para pasar al siguiente nivel de dificultad            
+                                  --------------------
+                                  
+ Tengo definido 12 niveles de dificultad. Un nivel esta definido por la
+ complejidad de las figuras que pueden aparecer en el nivel y por el
+ delta_t que transcurre en cada traslacion hacia el fondo de la "caja".
+ 
+      ESC : Escape, para salir abruptamente del juego. 
+    
+   * A la izquierda de la pantalla principal se muestra el nivel de 
+     dificultad en el que se esta ("level numero_nivel") y tambien
+     se dibujan un conjunto de rectangulos de colores.
+     Esos rectangulos reflejan hasta donde se esta ocupando (con cubos)
+     el paralelepipedo. Cada nivel de profundidad de la caja tiene un
+     color distinto.
+     
+   * A la derecha de la pantalla principal se despliega el puntaje
+     alcanzado y el numero de cubos jugados.
+     El puntaje se obtiene al completar un "muro" (cuando se completa
+     un muro este se quita de la caja). Mientras mas muros se completen
+     A LA VEZ, mas puntos se obtienen, o sea:
+       Puntaje(1 muro) + Puntaje(1 muro) < Puntaje(2 muros)
+     Tambien, si al completar muros se deja vacio el paralelepipedo, se 
+     obtiene puntaje adicional.
+     Y tambien, a mayor nivel de dificultad, mayor puntaje.
+     Los cubos jugados representan el numero de cubos que se han colocado en
+     el paralelepipedo o caja.
+     
+    
+   * Game Over :  Se pierde cuando se han ocupado demasiados niveles del
+    ------------  paralelepipedo (lo que se refleja en la columna de
+                  rectangulos que se dibujan en la pantalla de la izquierda),
+                  y la siguiente figura en juego no cabe en la caja.
+                  Solo quada la opcion de apretar ESC para salir.
+    
+ 

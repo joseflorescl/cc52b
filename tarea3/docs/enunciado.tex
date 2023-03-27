@@ -1,0 +1,127 @@
+\documentstyle[12pt,spanish]{article}
+\oddsidemargin 0cm
+\textwidth 16cm 
+\topmargin -1cm 
+\headheight 0cm 
+\textheight 22cm
+\parindent 3em  
+\parskip 3ex    
+\begin{document}
+
+{\Large\bf Enunciado Tarea Computaci'on Gr'afica}
+
+Hojeando el {\em Foley}, mirando las fotos de im'agenes gr'aficas, aparece una foto de un
+video juego que me result'o muy interesante. Se llama {\bf Block Out} y es algo as'i como
+un tetrix en 3D (la foto es el Plate 1.6 del Foley).
+
+La idea del juego consiste en que el jugador debe hacer calzar piezas o figuras de
+3D en un peque'no espacio.
+El espacio es un paralelep'ipedo de 3$\times$3$\times$10, y las figuras hay que irlas colocando
+hacia el fondo de este paralelep'ipedo o caja. 
+
+Las figuras pueden rotarse en torno a los 3 ejes, en 'angulos de 90 grados y -90 grados, y
+trasladarlas o moverlas en las direcciones arriba, abajo, derecha, izquierda, 
+siempre y cuando no se salga del espacio y no haya otra 
+figura que impida el movimiento.
+
+Cuando aparece en pantalla la pieza que hay que colocar al fondo del espacio, 'esta
+aparece transparente y una vez que la figura ya haya llegado al fondo quedar'a con un
+color dado, y quedar'a fija ah'i, y el jugador ya no la podr'a mover.
+
+An'alogamente como en el tetrix, cuando se ha completado un "muro" (por decirlo de
+alguna manera), 'este se elimina y todo lo que estaba delante del muro  se desplazar'a
+en 1 unidad hacia el fondo.
+
+Las figuras posibles est'an formadas por combinaciones de la figura elemental que es
+el cubo unitario.
+Yo ya he dise'nado 11 figuras que son las que aparecen en el video juego.
+
+Esta tarea se puede dividir en las siguientes 2 etapas:
+
+{\large\bf Etapa 1}
+\begin{itemize}
+    \item Dibujar el espacio (el paralelepipedo de 3$\times$3$\times$10)
+    \item Dibujar cada una de las figuras
+    \item Permitir rotaciones y traslaciones para cada una de las piezas dentro del
+     espacio
+\end{itemize}
+     Durante los d'ias de paro (5 semanas!) me estuve entreteniendo haciendo esta tarea y me met'i tanto en ella
+     que esta etapa est'a lista (creo yo). Los archivos est'an en {\bf anakena} en:
+\begin{verbatim}
+            ~jlflores/cc52b/tarea2/
+\end{verbatim}
+
+
+{\large\bf Etapa 2}
+
+ Consiste en incorporarle las caracter'isticas del juego al prototipo anterior, esto es:
+ 
+\begin{itemize} 
+    \item Generar aleatoriamente una figura dada y dibujarla en el espacio
+    \item Permitir rotar (en torno a los 3 ejes) y trasladar (arriba, abajo, derecha, izquierda)
+     esa figura.
+      El desplazamiento hacia adentro y hacia afuera  no lo maneja el jugador: cada cierto $\Delta$t de
+     tiempo la figura actual que se est'a manejando (la cual aparece transparente)
+     se desplaza en 1 udd. hacia adentro; o sea, adopta la caracteristica del video
+     juego : el jugador no puede hacer retroceder la figura; y as'i, se pueden
+     manejar distintos niveles de dificultad variando el valor del $\Delta$t.
+    \item Cuando la pieza ya no pueda seguir avanzando hacia adentro porque hay otra
+     pieza que se lo impide, o porque ya lleg'o al fondo del paralelep'ipedo, la
+     figura adoptar'a un color dado; y as'i, se vuelve a generar otra figura
+     aleatoriamente y se sigue la misma idea
+    \item Cuando un "muro" se haya completado, 'este se borra y todo lo que estaba delante
+     de 'el se corre en 1 udd. hacia adentro.
+\end{itemize}
+     
+     Tambi'en durante el paro estuve trabajando en esta etapa.
+     Los archivos est'an en
+\begin{verbatim}
+            ~jlflores/cc52b/tarea3/
+\end{verbatim}        
+El juego se ejecuta con {\em tarea3} y funciona as'i:
+
+Las teclas definidas para jugar son A, S, D, Q, W, E para rotar en torno a los 3 ejes en 'angulos de 90 grados y -90
+grados y I, J, K, L para trasladarse. Tambi'en est'an definidas las teclas N, P, Esc y la barra de espacio.
+
+\newpage 
+{\bf Rotaciones (seg'un la regla de la mano derecha)}
+\begin{itemize}   
+   \item  A : el pulgar apunta a tu derecha.
+    \item S : el pulgar apunta hacia abajo.
+    \item D : el pulgar apunta hacia fuera del monitor.
+
+    \item Q : Inverso de A
+    \item W : Inverso de S
+    \item Z : Inverso de D
+\end{itemize}
+
+ 
+{\bf Traslaciones}  
+\begin{itemize}   
+   \item  I : arriba
+    \item J : izquierda
+    \item K : abajo
+      \item L : derecha
+  
+\end{itemize}
+
+ 
+{\bf Otros botones} 
+\begin{itemize}  
+    \item P : Pausa
+    \item Barra espacio : Tira la figura  r'apido hacia el fondo
+    \item N : pasa al siguiente nivel de dificultad. Tengo definido 12 niveles de dificultad.
+             Un nivel est'a definido por la dificultad de las figuras que pueden aparecer, y por el $\Delta$t.
+\end{itemize}
+
+
+ 
+
+
+Cualquier observaci'on con respecto a la tarea la acepto sin ning'un problema.
+
+{\bf Jos'e Leonardo Flores Vargas }
+  
+{\bf jlflores@dcc.uchile.cl}
+
+\end{document}
