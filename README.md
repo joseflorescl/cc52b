@@ -1,11 +1,11 @@
 # cc52b
- Tarea final para el curso Computación Gráfica CC52B, Universidad de Chile, año 1997.<br>
- El juego Block Out original es del año 1989, que es una versión en 3D del Tetris.<br>
- Programación y Arte por: José Leonardo Flores.<br>
- Sonido: no tiene.<br>
+ Final assignment for the Computer Graphics course CC52B, Universidad de Chile, 1997.<br>
+ The original Block Out game is from 1989 and is a 3D version of Tetris.<br>
+ Programming and Art by: José Leonardo Flores.<br>
+ Sound: none.<br>
  
-  - Tomé la idea de hacer este juego de una foto que aparece en el libro "Computer Graphics: Principles and Practice" del autor James D. Foley.
-  - Se usó la librería gráfica llamada VOGL (a Very Ordinary GL Library), ya que todavía en el curso no se estaba usando OpenGL.
-  - Lenguaje de programación: C
-  - Nota: 7.0
+  - I got the idea to make this game from a photo that appears in the book 'Computer Graphics: Principles and Practice' by James D. Foley.
+  - The graphics library used is called [VOGL](https://teuben.github.io/nemo/man_html/vogl.3.html) (a Very Ordinary GL Library), as we were not yet using OpenGL in the course.
+  - Programming Language: C
+  - Grade: 7.0/7.0
   - Screenshots: https://joseleonardo.itch.io/blockout
